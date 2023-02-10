@@ -2,9 +2,12 @@ let mongoose = require('mongoose');
 
 const CategorySchema = new mongoose.Schema(
   {
-    CategoryName: String
+    CategoryName: {
+      type: String,
+      unique: true,
+    },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 const Category = mongoose.model('Category', CategorySchema);
